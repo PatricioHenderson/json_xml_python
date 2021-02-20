@@ -49,8 +49,8 @@ El dataset que retorna "fetch" debe ser una lista de diccionarios con la siguien
 {"price": ..., "condition": ...}
 ```
 dataset es una lista que contiene una fila como la anterior mostrada por cada departamento en alquiler que estuviea en pesos.\
-En el dataset solos nos interesa que almacenen el precio de cada departamento y la condición (si es nuevo o usado o no especificado).\
-Recomendamos ejecutar en su explorador la URL y investigar por su cuenta los datos en cada fila de "results" para entender como se llamanan las "keys" y los tipos de "values" que posee cada una.
+En el dataset solo nos interesa que almacenen el precio de cada departamento y la condición (si es nuevo o usado o no especificado).\
+Recomendamos ejecutar en su explorador la URL e investigar por su cuenta los datos en cada fila de "results" para entender como se llamanan las "keys" y los tipos de "values" que posee cada una.
 
 Ejemplo de como se irá construyendo nuestro dataset
 ```
@@ -99,3 +99,19 @@ Cuando finalicen el ejercicio pueden realizar las siguientes modificaciones:
 - Que la función fetch reciba por parámetro la ciudad que se desea buscar en la URL.
 - Jugar con algunos datos extra que hay en el JSON como la cantidad de ambients, y realizar gráficos o comparaciones (sean creativos ^_^).
 
+if __name__ == "__main__":
+    min = ....
+    max = ....
+
+    dataset = fetch()
+    data = transform(dataset, min, max)
+    report(data)
+
+
+
+url = 'https://api.mercadolibre.com/sites/MLA/search?category=MLA1459&q=Departamentos%20Alquilers%20Mendoza%20&limit=50'
+
+response = response.get(url)
+data = json.loads(response)
+data = response.json()
+print(data)

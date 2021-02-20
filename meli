@@ -1,0 +1,198 @@
+[
+    {
+        "price": 3300,
+        "condition": "used"
+    },
+    {
+        "price": 2200,
+        "condition": "used"
+    },
+    {
+        "price": 2600,
+        "condition": "used"
+    },
+    {
+        "price": 2000,
+        "condition": "used"
+    },
+    {
+        "price": 3000,
+        "condition": "used"
+    },
+    {
+        "price": 2000,
+        "condition": "used"
+    },
+    {
+        "price": 5500,
+        "condition": "new"
+    },
+    {
+        "price": 2700,
+        "condition": "not_specified"
+    },
+    {
+        "price": 1999,
+        "condition": "used"
+    },
+    {
+        "price": 5000,
+        "condition": "used"
+    },
+    {
+        "price": 2000,
+        "condition": "used"
+    },
+    {
+        "price": 2500,
+        "condition": "used"
+    },
+    {
+        "price": 3500,
+        "condition": "not_specified"
+    },
+    {
+        "price": 100,
+        "condition": "used"
+    },
+    {
+        "price": 1800,
+        "condition": "not_specified"
+    },
+    {
+        "price": 22000,
+        "condition": "used"
+    },
+    {
+        "price": 4000,
+        "condition": "used"
+    },
+    {
+        "price": 2500,
+        "condition": "not_specified"
+    },
+    {
+        "price": 4200,
+        "condition": "not_specified"
+    },
+    {
+        "price": 3400,
+        "condition": "not_specified"
+    },
+    {
+        "price": 1000,
+        "condition": "used"
+    },
+    {
+        "price": 5000,
+        "condition": "used"
+    },
+    {
+        "price": 2500,
+        "condition": "not_specified"
+    },
+    {
+        "price": 4000,
+        "condition": "used"
+    },
+    {
+        "price": 25000,
+        "condition": "used"
+    },
+    {
+        "price": 1000,
+        "condition": "not_specified"
+    },
+    {
+        "price": 3500,
+        "condition": "used"
+    },
+    {
+        "price": 1000,
+        "condition": "not_specified"
+    },
+    {
+        "price": 2100,
+        "condition": "not_specified"
+    },
+    {
+        "price": 3000,
+        "condition": "used"
+    },
+    {
+        "price": 6000,
+        "condition": "used"
+    },
+    {
+        "price": 5500,
+        "condition": "used"
+    },
+    {
+        "price": 55000,
+        "condition": "used"
+    },
+    {
+        "price": 45000,
+        "condition": "used"
+    },
+    {
+        "price": 4200,
+        "condition": "not_specified"
+    },
+    {
+        "price": 2000,
+        "condition": "used"
+    },
+    {
+        "price": 9000,
+        "condition": "used"
+    },
+    {
+        "price": 5500,
+        "condition": "not_specified"
+    },
+    {
+        "price": 35900,
+        "condition": "used"
+    },
+    {
+        "price": 2500,
+        "condition": "used"
+    },
+    {
+        "price": 7000,
+        "condition": "used"
+    },
+    {
+        "price": 1500,
+        "condition": "not_specified"
+    },
+    {
+        "price": 1988,
+        "condition": "used"
+    },
+    {
+        "price": 3000,
+        "condition": "used"
+    },
+    {
+        "price": 3200,
+        "condition": "used"
+    },
+    {
+        "price": 3000,
+        "condition": "new"
+    },
+    {
+        "price": 2500,
+        "condition": "used"
+    },
+    {
+        "price": 2250,
+        "condition": "used"
+    },
+    {
+        "price": 2900,
+        "condition": "used"
+    }
+]

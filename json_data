@@ -1,0 +1,15 @@
+{
+    "nombre": "Patricio",
+    "apellido": "Henderson",
+    "dni": "93.852.079",
+    "vestimenta": [
+        {
+            "prenda": "zapatilla",
+            "cantidad": 4
+        },
+        {
+            "prenda": "remeras",
+            "cantidad": 12
+        }
+    ]
+}

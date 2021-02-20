@@ -15,11 +15,14 @@ __author__ = "Inove Coding School"
 __email__ = "alumnos@inove.com.ar"
 __version__ = "1.1"
 
+import json
+import requests
+import matplotlib.pyplot as plt
 
 def ej1():
     # JSON Serialize
     # Armar un JSON que represente los datos personales
-    # de su persona (puede invitar los datos sino quiere exponer
+    # de su persona (puede inventar los datos sino quiere exponer
     # información confidencial)
 
     # Debe armar un JSON que tenga como datos
@@ -30,14 +33,28 @@ def ej1():
     #  { "prenda": "remeras", "cantidad": 12 }
     # Que su lista de prendas dentro del JSON tenga al menos 2 prendas
 
-    # json_data = {...}
+    json_data = {
+        "nombre": "Patricio",
+        "apellido":"Henderson",
+        "dni":"93.852.079",
+        "vestimenta":
+          [
+          { "prenda": "zapatilla", "cantidad": 4 },
+          { "prenda": "remeras", "cantidad": 12 }
+          ]
+               }
 
     # Una vez que finalice el JSON realice un "dump" para almacenarlo en
     # un archivo que usted defina
-
+    json_string = json.dumps(json_data)
+    print("Ejercicio 1, Json a string", json_string)
     # Observe el archivo y verifique que se almaceno lo deseado
-    pass
+    
+    with open ("json_data", "w") as jsonfile:
 
+        json.dump(json_data,jsonfile, indent=4)    
+    pass
+    
 
 def ej2():
     # JSON Deserialize
@@ -49,8 +66,18 @@ def ej2():
     # el método "dumps" y finalmente imprimir en pantalla el resultado
     # Recuerde utilizar indent=4 para poder observar mejor el resultado
     # en pantalla y comparelo contra el JSON que generó en el ej1
-    pass
+    with open ("json_data","r") as jsonfile:
 
+        json_data = json.load(jsonfile)
+        print("Deserialize json" , json_data)
+        
+
+        json_string = json.dumps(json_data)
+        print("Json a string" , json_string)
+        
+        pass
+    
+    
 
 def ej3():
     # Ejercicio de XML
@@ -101,13 +128,133 @@ def ej5():
     # para imprimir cuantos títulos completó cada usuario
     # y verifique si los primeros usuarios (mirando la página a ojo)
     # los datos recolectados son correctos.
+    url = "https://jsonplaceholder.typicode.com/todos"
+    response = requests.get(url)
+    
+
+    #info = response.json()
+    info = json.loads(response.text)
+    
+    contadoruser1 = 0
+    for user in info:
+        if user ["userId"] == 1 and user ["completed"] == True:
+            contadoruser1 +=1
+    
+    contadoruser2 = 0
+    for user in info:
+        if user ["userId"] == 2 and user ["completed"] == True:
+            contadoruser2 +=1
+
+    contadoruser3 = 0
+    for user in info:
+        if user ["userId"] == 3 and user ["completed"] == True:
+            contadoruser3 +=1        
+    
+    contadoruser4 = 0
+    for user in info:
+        if user ["userId"] == 4 and user ["completed"] == True:
+            contadoruser4 +=1
+    
+    contadoruser5 = 0
+    for user in info:
+        if user ["userId"] == 5 and user ["completed"] == True:
+            contadoruser5 +=1
+    
+    contadoruser6 = 0
+    for user in info:
+        if user ["userId"] == 6 and user ["completed"] == True:
+            contadoruser6 +=1
+    
+    contadoruser7 = 0
+    for user in info:
+        if user ["userId"] == 7 and user ["completed"] == True:
+            contadoruser7 +=1
+    
+    contadoruser8 = 0
+    for user in info:
+        if user ["userId"] == 8 and user ["completed"] == True:
+            contadoruser8 +=1
+    
+    contadoruser9 = 0
+    for user in info:
+        if user ["userId"] == 9 and user ["completed"] == True:
+            contadoruser9 +=1
+        
+    contadoruser10 = 0
+    for user in info:
+        if user ["userId"] == 10 and user ["completed"] == True:
+            contadoruser10 +=1
+    
+    print((contadoruser1,contadoruser2,contadoruser3,contadoruser4,contadoruser5,contadoruser6,
+            contadoruser7,contadoruser8,contadoruser9,contadoruser10))
+
+    aprobados = ((contadoruser1,contadoruser2,contadoruser3,contadoruser4,contadoruser5,contadoruser6,
+            contadoruser7,contadoruser8,contadoruser9,contadoruser10))
+
+    users = (1,2,3,4,5,6,7,8,9,10)       
+    fig = plt.figure()
+    fig.suptitle("No me gusta como lo resolví!")
+
+    ax = fig.add_subplot()
+    
+    ax.pie(aprobados , labels=users , autopct="%1.1f%%")
+    plt.show()
 
 
 
+    "Lo arme de nuevo en base a las correciones que ví en el foro y me gusta un poco más, costo pero lo entendí"
+
+
+
+
+    url = "https://jsonplaceholder.typicode.com/todos"
+    response = requests.get(url)
+    
+    data = json.loads(response.text)
+    data = response.json()
+
+    
+    # Utilizando mascara
+
+    filter_data = [x["userId"] for x in data if x.get("completed") is True] 
+    
+    
+    print (filter_data)
+    
+    data = {}
+
+    for i in filter_data:
+        if (i in data) == False:
+            data[i] = 0
+        data[i] += 1
+    users = []
+    cursos= []
+    for i in data:
+        print("El usuario {} realizo {}  cursos".format(i,data[i]))
+        
+        users.append(i)
+        cursos.append(data[i])
+    
+    
+    fig = plt.figure()
+    fig.suptitle ("ejercicio 5")
+
+    ax = fig.add_subplot()
+
+    ax.pie(cursos, labels=users , autopct="%1.1f%%")
+    plt.show()
+
+
+
+
+
+   
+    
+    
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
-    ej1()
-    # ej2()
+    #ej1()
+    #ej2()
     # ej3()
     # ej4()
-    # ej5()
+    ej5()
