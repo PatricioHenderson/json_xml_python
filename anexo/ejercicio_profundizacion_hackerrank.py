@@ -14,12 +14,12 @@ def fetch(page_number, location_id):
     json_response = dataset["data"]
 
     filtrado = [{"userId": x["userId"] , "amount": x["amount"]} for x in json_response if x["location"]["id"] == location_id]
-   
+    
     
     return filtrado
 
 def transform(dataset):
-
+    
     data = {}
 
     
@@ -30,29 +30,41 @@ def transform(dataset):
         variable = dataset[i]
         userid = variable['userId']
         amount = variable['amount']
-        #amount = float(re.sub(r'[^\d\-.]', '', amount_str))
-
-        if (userid in dataset ) == False:
-            data[i] = 0
-        data[userid] =  data[userid] #+ amount
+        amount = float(re.sub(r'[^\d\-.]', '', amount))
+        #print(amount)
         
-        print(data)
+        if (userid in data) == False:
+            
+            data[userid] = 0
+        
+        data[userid] = data[userid] + amount
+        
+    print(data)
+    return(data)
+        
+def report (data):
+    
+    X = data.keys() 
+    Y = data.values() 
+    #print(X,Y)
+    #x1 = [data['X'] for data in filter_dataset]
+    fig = plt.figure()
+    fig.suptitle("Ejercicio Hackerarrank", fontsize=22)
+    ax = fig.add_subplot()
 
+    ax.bar(X,Y)
+    plt.show()
 
-
-    lista_str = json.dumps(dataset)
-    amount = float(re.sub(r'[^\d\-.]', '', amount_str))
-
-    print (lista_str)
 
 if __name__ == "__main__":
     page_number = 1
-    location_id = 7
+    location_id = 7 
     dataset = fetch(page_number, location_id)
     
-    
     data = transform(dataset)
-    #report(data)
+    report(data)
+
+
 
 
 
